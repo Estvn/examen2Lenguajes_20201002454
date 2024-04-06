@@ -3,6 +3,8 @@ package hn.unah.lenguajes1900.data.examen2lenguajes.entities;
 import java.time.LocalDate;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -31,6 +33,7 @@ public class Cuenta {
     private boolean sobregiro;
 
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "dni", referencedColumnName = "dni")
     private Cliente cliente;
 
